@@ -2,7 +2,7 @@ package chapter4;
 /* 다중 조건문 if~else if 20260105*/
 public class IfExample2 {
     public static void main(String[] args){
-        int age = 27;
+        int age = 62;
         int charge; // 변수 선언: 나이, 입장료
 
         // 조건 여러 개 제시.
@@ -19,6 +19,10 @@ public class IfExample2 {
         else if (age < 20){ //조건 3: 20세 미만
             charge = 2500;
             System.out.println("종고등학생입니다.");
+        }
+        else if (age >= 60){ // 260108 추가 : 60세 이상일 때 경로우대와 입장료 0원 출력(04장 되새김 문제 07)
+            charge = 0;
+            System.out.println("경로우대입니다.");
         }
         else{ // 조건 3개가 모두 거짓
             charge = 3000;
