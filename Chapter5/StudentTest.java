@@ -29,6 +29,8 @@ public class StudentTest {
         Student studentLee = new Student();
         //studentLee.studentName = "이상원";
         studentLee.setStudentName("이상원");
+        // variable studentLee is already defined in method main(java.lang.String[]) 오류
+        // 한 변수를 두 번 이상 선언했을 때 발생.
 
         System.out.println(studentLee.getStudentName());
     }
