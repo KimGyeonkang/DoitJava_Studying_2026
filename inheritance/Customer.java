@@ -16,7 +16,7 @@ public class Customer {
         this.customerName = customerName;
         customerGrade = "SILVER";
         bonusRatio = 0.01;
-        System.out.println("Customer(int, String) 생성자 호출");
+        // System.out.println("Customer(int, String) 생성자 호출");
     }
 
     // 고객의 속성 기본값(고객 등급, 보너스 포인트 적립 비율)을 디폴트 생성자로 정의
