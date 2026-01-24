@@ -16,6 +16,14 @@ public class CompleteCalc extends Calculator {
             System.out.println("오류 발생: 나눌 수 없음"); // 오류 메시지 출력 기능 추가
             return Calc.ERROR; // 오류 반환
     }
+    /*
+    // 인터페이스의 디폴트 메서드 재정의
+    @Override
+    public void description() {
+        // super.description(); // 인터페이스에 선언한 메서드
+        System.out.println("인터페이스의 디폴트 메서드 재정의");
+    }
+    */
     // 해당 클래스에서 추가로 구현한 메서드
     public void showInfo() {
         System.out.println("Calc 인터페이스 구현");

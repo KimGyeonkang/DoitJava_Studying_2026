@@ -16,6 +16,10 @@ public class CalculatorTest {
         System.out.println(calc.divide(num1, num2));
         System.out.println( );
         calc.showInfo(); // CompleteCalc 클래스에서 추가로 구현한 메서드 호출
+        calc.description();; // 인터페이스의 디폴트 메서드 호출
 
+        // 인터페이스의 정적 메서드 호출(모든 배열 요소의 합)
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(Calc.total(arr));
     }
 }
