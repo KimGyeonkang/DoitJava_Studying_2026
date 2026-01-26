@@ -1,0 +1,47 @@
+package object;
+// clone() 메서드로 인스턴스 복제
+class Point { // 원점을 의미하는 클래스
+    int x;
+    int y;
+
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public String toString() {
+        return "x = " + x + ", " + "y = " + y;
+    }
+}
+
+class Circle implements Cloneable { // 객체를 복제해도 된다는 의미로 Cloneable 인터페이스 함께 선언
+    Point point; // 원점
+    int radius; // 원의 반지름
+
+    Circle(int x, int y, int radius) {
+        this.radius = radius;
+        point = new Point(x, y);
+    }
+
+    public String toString() {
+        return "원점: " + point + ", 반지름: " + radius;
+    }
+    // clone() 메서드 사용시 발생할 수 있는 오류를 예외 처리
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class ObjectCloneTest {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Circle circle = new Circle(10, 20, 30);
+        Circle copyCircle = (Circle) circle.clone();
+
+        System.out.println(circle);
+        System.out.println(copyCircle);
+        // 아래는 각 인스턴스의 실제 주솟값 출렧
+        System.out.println(System.identityHashCode(circle));
+        System.out.println(System.identityHashCode(copyCircle));
+    }
+}
