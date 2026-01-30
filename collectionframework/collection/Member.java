@@ -30,6 +30,6 @@ public class Member {
     // 여기서는 회원 정보 출력 기능
     @Override
     public String toString() {
-        return memberName + "회원님의 아이디:  " + memberId ;
+        return memberName + " 회원님의 아이디:  " + memberId ;
     }
 }
