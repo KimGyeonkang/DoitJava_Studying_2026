@@ -1,15 +1,12 @@
 package collectionframework.collection;
-// 컬렉션 프레임워크 사용 예제: 회원 관리 프로그램
-// 회원 클래스: 프로그램 전반에서 공통 사용
 
-import singleton.Company;
+import java.util.Comparator;
 
-public class Member implements Comparable<Member> {
-    // 회원 속성
+public class Member2 implements Comparator<Member2> {
     private int memberId;
     private String memberName;
 
-    public Member(int memberId, String memberName) {
+    public Member2(int memberId, String memberName) {
         this.memberId = memberId;
         this.memberName = memberName;
     }
@@ -42,8 +39,8 @@ public class Member implements Comparable<Member> {
 
     @Override // equals() 재정의
     public boolean equals(Object obj) {
-        if (obj instanceof Member) { // 매개변수가 Member 자료형인지 확인
-            Member member = (Member) obj; // 매개변수를 Member형으로 변환 후 member에 대입
+        if (obj instanceof Member2) { // 매개변수가 Member 자료형인지 확인
+            Member2 member = (Member2) obj; // 매개변수를 Member형으로 변환 후 member에 대입
             if (this.memberId == member.memberId) { // 매개변수가 회원 아이디와 같으면
                 return true;
             }
@@ -53,8 +50,8 @@ public class Member implements Comparable<Member> {
         return false;
     }
 
-    @Override // Comparable 인터페이스의 compereTo() 메서드 재정의
-    public int compareTo(Member member) {
-        return (this.memberId-member.memberId) * (-1);
+    @Override // Comparator 인터페이스의 compere() 메서드 재정의
+    public int compare(Member2 mem1, Member2 mem2) {
+        return mem1.getMemberId() - mem2.getMemberId(); // 두 매개변수의 값 비교
     }
 }
